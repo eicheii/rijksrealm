@@ -14,5 +14,3 @@ export const searchArtworks = async (query) => {
         return [];
     }
 };
-
-console.log(process.env.REACT_APP_RIJKSMUSEUM_API_KEY)

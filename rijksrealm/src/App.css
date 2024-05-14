@@ -11,6 +11,12 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgb(87, 75, 75);
+  color: rgb(167, 186, 216);
 }
 
+.artwork-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}

@@ -14,7 +14,7 @@ function SearchFunction() {
         e.preventDefault();
         try {
             const results = await searchArtworks(searchField);
-            setSearchResults(results);
+            setSearchResults(results);  
         } catch (error) {
             console.error('Error searching for artworks', error);
         }
@@ -25,7 +25,7 @@ function SearchFunction() {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder="Search here"
                     value={searchField}
                     onChange={handleChange}
                 />
