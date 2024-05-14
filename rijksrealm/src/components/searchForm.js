@@ -33,7 +33,7 @@ function SearchFunction() {
             </form>
             <div>
                 {searchResults.length > 0 && (
-                    <ul>
+                    <ul style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
                         {searchResults.map((art) => (
                             <li key={art.objectNumber}>
                                 <Artwork artwork={art} />
