@@ -1,7 +1,13 @@
 import React from 'react';
 
 const Artwork = ({ artwork }) => {
+    const saveArtworkButton = () => {
+        let savedArtworks = JSON.parse(localStorage.getItem('likedArtworks')) || [];
 
+        savedArtworks.push(artwork);
+        
+        localStorage.setItem('likedArtworks', JSON.stringify(savedArtworks));
+    };
 
     return (
         <div classmame="artwork-container">
@@ -12,7 +18,7 @@ const Artwork = ({ artwork }) => {
         ) : (
             <div>No image available</div>
         )}
-            <button>Save</button>
+            <button onClick={saveArtworkButton}>Save</button>
             {/* Add more details as needed */}
         </div>
     );

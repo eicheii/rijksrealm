@@ -28,6 +28,7 @@ function App() {
     <div className="App">
       <Header className="App-header"/>
       <main>
+        <LikedArtworks />
         <SearchForm />
       </main>
     </div>
