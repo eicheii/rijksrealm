@@ -14,7 +14,7 @@ const Artwork = ({ artwork }) => {
             <h2>{artwork.title}</h2>
             <p>Artist: {artwork.principalOrFirstMaker}</p>
             {artwork.webImage && artwork.webImage.url ? (
-            <img src={artwork.webImage.url} alt={artwork.title} style={{ maxWidth: '600px'}} />
+            <img src={artwork.webImage.url} alt={artwork.title} className="gallery-image" style={{ maxWidth: '600px'}} />
         ) : (
             <div>No image available</div>
         )}
