@@ -4,7 +4,7 @@ const LikedArtworks = () => {
     // hämtar sparade konstverk från localStorage
     const [likedArtworks, setLikedArtworks] = useState(() => {
         let savedArtworks = JSON.parse(localStorage.getItem('likedArtworks'));
-        return savedArtworks|| [];
+        return savedArtworks || [];
     });
 
     const updateLocalStorage = (artworks) => {
@@ -21,13 +21,17 @@ const LikedArtworks = () => {
     return (
         <div>
             <h2>Liked Artworks:</h2>
-            <ul>
+            <div className="gallery">
+            <ul style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
                 {likedArtworks.map((artwork) => (
-                    <li key={artwork.id}>
-                        {artwork.title} <button onClick={() => handleRemove(artwork)}>Remove</button>
+                    <li key={artwork.id} className="gallery-item">
+                        <img src={artwork.webImage.url} alt={artwork.title} className="gallery-image" style={{ maxWidth: '100px'}} />
+                        <p>{artwork.title}</p>
+                        <button onClick={() => handleRemove(artwork)}>Remove</button>
                     </li>
                 ))}
             </ul>
+        </div>
         </div>
     );
 };

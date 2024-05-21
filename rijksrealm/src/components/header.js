@@ -14,19 +14,3 @@ const Header = () => {
 
 export default Header;
 
-/* nav suggestion?
-
-{/*  const Header = () => {
-    return (
-        <header>
-            <h1> Rijksrealm</h1>
-            <nav>
-                <ul>
-                    <li><a href ="#Home"</a></li>"
-                    <li><a href ="#My Gallery" </a></li>"
-            </nav>
-            </header> 
-        );
-    };  
-
-*/
