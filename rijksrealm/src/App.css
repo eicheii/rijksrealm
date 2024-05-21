@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-header {
   background-color: #f0ebe6;
   min-height: 10vh;
@@ -20,3 +19,22 @@
   justify-content: center;
   height: 100vh;
 }
+
+.header-nav {
+  display: flex;
+}
+
+.header-link {
+  text-decoration: none;
+  color: rgb(120, 141, 175);
+  margin-left: auto; 
+  margin-right: 10pc;
+  padding: 10px;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.header-link:hover {
+  color: rgb(126, 150, 187);
+}
+
