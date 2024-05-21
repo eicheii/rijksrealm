@@ -25,7 +25,11 @@ const LikedArtworks = () => {
             <ul className="gallery" style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
                 {likedArtworks.map((artwork) => (
                     <li key={artwork.id} className="gallery-item">
+                        {artwork.webImage && artwork.webImage.url ? (
                         <img src={artwork.webImage.url} alt={artwork.title} className="gallery-image" />
+                        ) : (
+                            <div>No image available</div>
+                        )}
                         <p>{artwork.title}</p>
                         <button onClick={() => handleRemove(artwork)}>Remove</button>
                     </li>
