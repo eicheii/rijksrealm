@@ -4,7 +4,7 @@ const LikedArtworks = () => {
     // hämtar sparade konstverk från localStorage
     const [likedArtworks, setLikedArtworks] = useState(() => {
         let savedArtworks = JSON.parse(localStorage.getItem('likedArtworks'));
-        return savedArtworks;
+        return savedArtworks|| [];
     });
 
     const updateLocalStorage = (artworks) => {
