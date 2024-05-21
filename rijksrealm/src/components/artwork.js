@@ -1,20 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const Artwork = ({ artwork }) => {
     const saveArtworkButton = () => {
         let savedArtworks = JSON.parse(localStorage.getItem('likedArtworks')) || [];
 
-        // Check if the artwork ID already exists in the saved artworks
-        const exists = savedArtworks.some(item => item.id === artwork.id);
+        // Kontrollerar om artwork ID redan existerar i likedArtworks array
+        const artworkExists = savedArtworks.some(item => item.id === artwork.id);
 
-        if (exists) {
-            // Display an alert if the artwork is already saved
-            window.alert('This artwork is already saved.');
+        if (artworkExists) {
+            window.alert('This artwork is already saved!');
         } else {
-            // If the artwork is not already saved, add it to the saved artworks array
             savedArtworks.push(artwork);
 
-            // Update localStorage with the updated saved artworks array
             localStorage.setItem('likedArtworks', JSON.stringify(savedArtworks));
         }
     };
@@ -22,7 +19,7 @@ const Artwork = ({ artwork }) => {
     return (
         <div>
             {artwork.webImage && artwork.webImage.url ? (
-            <img src={artwork.webImage.url} alt={artwork.title} className="gallery-image" />
+            <img src={artwork.webImage.url} alt={artwork.title} className='gallery-image' />
             ) : (
                 <div>No image available</div>
             )}

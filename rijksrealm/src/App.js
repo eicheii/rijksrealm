@@ -12,7 +12,7 @@ import { useState } from 'react';
 function App() {
   return (
     <div className="App">
-      <Header className="App-header"/>
+      <Header />
       <main>
         <LikedArtworks />
         <SearchForm />

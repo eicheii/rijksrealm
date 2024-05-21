@@ -1,2 +1,0 @@
-# rijksrealm
-Rijksmuseum collection 

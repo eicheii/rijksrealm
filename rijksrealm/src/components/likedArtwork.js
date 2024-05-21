@@ -20,7 +20,7 @@ const LikedArtworks = () => {
 
     return (
         <div>
-            <h2>Liked Artworks:</h2>
+            <h2>Liked Artworks</h2>
             <div>
             <ul className="gallery" style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
                 {likedArtworks.map((artwork) => (
