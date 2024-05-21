@@ -31,9 +31,9 @@ function SearchFunction() {
                 />
                 <button type="submit">Search</button>
             </form>
-            <div className="gallery">
+            <div>
                 {searchResults.length > 0 && (
-                    <ul style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
+                    <ul className="gallery" style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
                         {searchResults.map((art) => (
                             <li key={art.objectNumber} className="gallery-item">
                                 <Artwork artwork={art} />

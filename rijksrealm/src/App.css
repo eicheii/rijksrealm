@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+/* header */
 .App-header {
   background-color: #f0ebe6;
   min-height: 10vh;
@@ -13,13 +14,7 @@
   color: rgb(167, 186, 216);
 }
 
-.artwork-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
+/* nav */
 .header-nav {
   display: flex;
 }
@@ -38,13 +33,12 @@
   color: rgb(126, 150, 187);
 }
 
-
+/* gallery */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   padding: 16px;
-  grid-auto-flow: column; 
 }
 
 .gallery-item {
