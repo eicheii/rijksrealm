@@ -6,7 +6,9 @@ const Header = () => {
         <header className="header">
             <h1 className="header-title">Rijksrealm</h1>
             <nav className="header-nav">
-                <a href="#my-gallery" className="header-link">Saved Artworks</a>
+                <a href="/" className="header-link">Start</a>
+
+                <a href="/liked" className="header-link">Saved Artworks</a>
             </nav>
         </header>
     );
