@@ -25,6 +25,7 @@ const Artwork = ({ artwork }) => {
             )}
             <h3>{artwork.title}</h3>
             <p style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
+
             <button onClick={saveArtworkButton}>Save</button>
             {/* Add more details as needed */}
         </div>
@@ -32,3 +33,5 @@ const Artwork = ({ artwork }) => {
 };
 
 export default Artwork;
+
+

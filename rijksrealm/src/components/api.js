@@ -1,4 +1,4 @@
-const API_KEY = process.env.REACT_APP_RIJKSMUSEUM_API_KEY;
+/*const API_KEY = process.env.REACT_APP_RIJKSMUSEUM_API_KEY;
 const API_BASE_URL = 'https://www.rijksmuseum.nl/api/en/';
 
 export const searchArtworks = async (query) => {
@@ -13,4 +13,25 @@ export const searchArtworks = async (query) => {
         console.error('Error fetching data', error);
         return [];
     }
+}; */
+
+const API_KEY = process.env.REACT_APP_RIJKSMUSEUM_API_KEY;
+const API_BASE_URL = 'https://www.rijksmuseum.nl/api/en/';
+
+export const searchArtworks = async (query, sort = 'relevance') => {
+    try {
+        const response = await fetch(`${API_BASE_URL}collection?key=${API_KEY}&q=${query}&s=${sort}&imgonly=True`);
+        if (!response.ok) {
+            throw new Error('Oopsie, something went wrong');
+        }
+        const data = await response.json();
+        return data.artObjects;
+    } catch (error) {
+        console.error('Error fetching data', error);
+        return [];
+    }
 };
+
+
+
+
