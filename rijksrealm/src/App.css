@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* header */
@@ -12,25 +15,80 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(167, 186, 216);
+  padding: 20px;
+  width: 100%;
 }
 
 /* nav */
 .header-nav {
   display: flex;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .header-link {
   text-decoration: none;
   color: rgb(120, 141, 175);
-  margin-left: auto; 
-  margin-right: 10pc;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 1rem;
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 5px;
+  border: 2px solid transparent;
 }
 
 .header-link:hover {
-  color: rgb(126, 150, 187);
+  color: rgb(255, 255, 255);
+  background-color: rgb(126, 150, 187);
+  border: 2px solid rgb(120, 141, 175);
+}
+
+/* search form */
+.search-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.sort-select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button {
+  background-color: rgb(120, 141, 175);
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.search-button:hover {
+  background-color: rgb(100, 120, 160);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* gallery */
@@ -39,6 +97,7 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 16px;
   padding: 16px;
+  margin-top: 20px;
 }
 
 .gallery-item {
@@ -57,7 +116,6 @@
 }
 
 /* modal */
-/* täcker hela skärmen så användaren inte kan trycka utanför */
 .modal-fullwidth { 
   position: fixed;
   top: 0;
@@ -93,13 +151,13 @@
   text-align: left;
 }
 
-.modal-body>img {
+.modal-body > img {
   width: 45%;
   border-radius: 5px;
   box-shadow: 1px 2px 5px #6f6f74;
 }
 
-.modal-text{
+.modal-text {
   width: 50%;
   margin-left: 1em;
 }
@@ -112,8 +170,7 @@
   overflow: hidden;
 }
 
-/* mobil: 600px */
-/* !! behöver fixas !! */
+/* mobile: 600px */
 @media only screen and (max-width: 600px) {
   .modal-container {
     position: fixed;
