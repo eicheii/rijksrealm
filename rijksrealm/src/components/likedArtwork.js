@@ -47,14 +47,14 @@ const LikedArtworks = () => {
                     {likedArtworks.map((artwork) => (
                         <li key={artwork.id} className="gallery-item" >
                             {artwork.webImage && artwork.webImage.url ? (
-                                <img 
-                                    src={artwork.webImage.url} 
-                                    alt={artwork.title} 
-                                    className="gallery-image cursor-pointer" 
-                                    onClick={() => handleImageClick(artwork)} 
-                                />
+                            <img 
+                                src={artwork.webImage.url} 
+                                alt={artwork.title} 
+                                className="gallery-image cursor-pointer" 
+                                onClick={() => handleImageClick(artwork)} 
+                            />
                             ) : (
-                                <div>No image available</div>
+                            <div>No image available</div>
                             )}
                         </li>
                     ))}

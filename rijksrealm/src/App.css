@@ -121,6 +121,14 @@
   cursor: pointer;
 }
 
+.save-artwork-button {
+  background-color: #99abc9;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+}
+
 /* modal */
 .no-scroll {
   overflow: hidden;

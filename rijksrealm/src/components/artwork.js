@@ -22,19 +22,21 @@ const Artwork = ({ artwork }) => {
     };
 
     return (
-        <div>
-            {artwork.webImage && artwork.webImage.url ? (
-            <img src={artwork.webImage.url} alt={artwork.title} className='gallery-image' />
-            ) : (
-                <div>No image available</div>
-            )}
-            <h3>{artwork.title}</h3>
-            <p style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
+        <div className="gallery-container">
+            <ul className="gallery" style={{ listStyleType: 'none', padding: 0 }}>
+                <li key={artwork.id} className="gallery-item" >
+                    {artwork.webImage && artwork.webImage.url ? (
+                    <img src={artwork.webImage.url} alt={artwork.title} className='gallery-image' />
+                    ) : (
+                    <div>No image available</div>
+                    )}
+                    <h3>{artwork.title}</h3>
+                    <p style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
+                    <p>{artwork.description}</p>
 
-
-
-            <button onClick={saveArtworkButton}>Save</button>
-            {/* Add more details as needed */}
+                    <button className="save-artwork-button cursor-pointer" onClick={saveArtworkButton}>Save</button>
+                </li>
+            </ul>
         </div>
     );
 };
@@ -42,10 +44,3 @@ const Artwork = ({ artwork }) => {
 export default Artwork;
 
 
-/*<div>
-                {artwork.colors && artwork.colors.map((color, index) => (
-                    <span key={index} style={{ backgroundColor: color.hex, padding: '5px', margin: '2px' }}></span>
-                ))}
-                
-            
-            // </div> */
