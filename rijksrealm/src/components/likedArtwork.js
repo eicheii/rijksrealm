@@ -41,17 +41,16 @@ const LikedArtworks = () => {
 
     return (
         <div className="gallery-container">
-            <h2>Liked Artworks</h2>
+            <h2>Liked artworks</h2>
             <div>
                 <ul className="gallery" style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
                     {likedArtworks.map((artwork) => (
-                        <li key={artwork.id} className="gallery-item" >
+                        <li key={artwork.id} className="gallery-item cursor-pointer" onClick={() => handleImageClick(artwork)} >
                             {artwork.webImage && artwork.webImage.url ? (
                             <img 
                                 src={artwork.webImage.url} 
                                 alt={artwork.title} 
-                                className="gallery-image cursor-pointer" 
-                                onClick={() => handleImageClick(artwork)} 
+                                className="gallery-image"
                             />
                             ) : (
                             <div>No image available</div>

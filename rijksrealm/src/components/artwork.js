@@ -13,7 +13,11 @@ const Artwork = ({ artwork }) => {
 
             const artworkToSave = {
                 ...artwork,
-                description: artwork.description
+                description: artwork.description,
+                type: artwork.type,
+                material: artwork.material,
+                technique: artwork.technique,
+                period: artwork.period
             };
             savedArtworks.push(artwork);
 
@@ -32,7 +36,7 @@ const Artwork = ({ artwork }) => {
                     )}
                     <h3>{artwork.title}</h3>
                     <p style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
-                    <p>{artwork.description}</p>
+                    
 
                     <button className="save-artwork-button cursor-pointer" onClick={saveArtworkButton}>Save</button>
                 </li>

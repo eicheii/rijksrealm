@@ -14,10 +14,13 @@ const LikedArtworkModal = ({ artwork, onClose, removeLikedArtwork }) => {
                         <div>No image available</div>
                     )}
                     <div className="modal-text">
-                        <h3 className="border-bottom">{artwork.title}</h3>
+                        <h2 className="border-bottom" style={{ textTransform: 'uppercase' }}>{artwork.title}</h2>
                         <p className="border-bottom" style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
                         <p>{artwork.description}</p>
-                        
+                        <p><strong>Type:</strong> {artwork.type || 'Details unknown'}</p>
+                        <p><strong>Material:</strong> {artwork.material || 'Details unknown'}</p>
+                        <p><strong>Technique:</strong> {artwork.technique || 'Details unknown'}</p>
+                        <p><strong>Period:</strong> {artwork.period || 'Details unknown'}</p>
                     </div>
                   
                     

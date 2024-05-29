@@ -5,6 +5,7 @@ import Artwork from './artwork';
 const SearchForm = () => {
     const [query, setQuery] = useState('');
     const [sort, setSort] = useState('relevance');
+    
     const [artworks, setArtworks] = useState([]);
 
     const handleSearch = async () => {
@@ -34,6 +35,7 @@ const SearchForm = () => {
                     <option value="achronologic">Chronological (Newest first)</option>
                     {/* Add other sorting options as needed */}
                 </select>
+                
                 <button onClick={handleSearch} className="search-button">Search</button>
             </div>
             <div className="gallery">
