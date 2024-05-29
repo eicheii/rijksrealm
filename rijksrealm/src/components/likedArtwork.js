@@ -31,6 +31,7 @@ const LikedArtworks = () => {
     const handleImageClick = (artwork) => {
         setSelectedArtwork(artwork);
         document.body.classList.add("no-scroll");
+        console.log(artwork);
     };
 
     const handleCloseModal = () => {
@@ -39,25 +40,25 @@ const LikedArtworks = () => {
     };
 
     return (
-        <div>
+        <div className="gallery-container">
             <h2>Liked Artworks</h2>
             <div>
-            <ul className="gallery" style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
-                {likedArtworks.map((artwork) => (
-                    <li key={artwork.id} className="gallery-item">
-                        {artwork.webImage && artwork.webImage.url ? (
-                            <img 
-                                src={artwork.webImage.url} 
-                                alt={artwork.title} 
-                                className="gallery-image" 
-                                onClick={() => handleImageClick(artwork)} 
-                            />
-                        ) : (
-                            <div>No image available</div>
-                        )}
-                    </li>
-                ))}
-            </ul>
+                <ul className="gallery" style={{ listStyleType: 'none', padding: 0 }}> {/* Apply styling here */}
+                    {likedArtworks.map((artwork) => (
+                        <li key={artwork.id} className="gallery-item" >
+                            {artwork.webImage && artwork.webImage.url ? (
+                                <img 
+                                    src={artwork.webImage.url} 
+                                    alt={artwork.title} 
+                                    className="gallery-image cursor-pointer" 
+                                    onClick={() => handleImageClick(artwork)} 
+                                />
+                            ) : (
+                                <div>No image available</div>
+                            )}
+                        </li>
+                    ))}
+                </ul>
             </div>
 
             {selectedArtwork && (

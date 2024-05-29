@@ -10,6 +10,11 @@ const Artwork = ({ artwork }) => {
         if (artworkExists) {
             window.alert('This artwork is already saved!');
         } else {
+
+            const artworkToSave = {
+                ...artwork,
+                description: artwork.description
+            };
             savedArtworks.push(artwork);
 
             localStorage.setItem('likedArtworks', JSON.stringify(savedArtworks));
@@ -26,6 +31,8 @@ const Artwork = ({ artwork }) => {
             <h3>{artwork.title}</h3>
             <p style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
 
+
+
             <button onClick={saveArtworkButton}>Save</button>
             {/* Add more details as needed */}
         </div>
@@ -35,3 +42,10 @@ const Artwork = ({ artwork }) => {
 export default Artwork;
 
 
+/*<div>
+                {artwork.colors && artwork.colors.map((color, index) => (
+                    <span key={index} style={{ backgroundColor: color.hex, padding: '5px', margin: '2px' }}></span>
+                ))}
+                
+            
+            // </div> */

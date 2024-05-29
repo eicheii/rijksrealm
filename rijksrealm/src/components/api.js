@@ -25,13 +25,21 @@ export const searchArtworks = async (query, sort = 'relevance') => {
             throw new Error('Oopsie, something went wrong');
         }
         const data = await response.json();
-        return data.artObjects;
+
+        const artObjects = data.artObjects;
+        
+        const detailedArtworks = await Promise.all(artObjects.map(async (artObject) => {
+            const detailsResponse = await fetch(`${API_BASE_URL}collection/${artObject.objectNumber}?key=${API_KEY}`);
+            const detailsData = await detailsResponse.json();
+            return detailsData.artObject;
+        }));
+
+        return detailedArtworks;
     } catch (error) {
         console.error('Error fetching data', error);
         return [];
     }
 };
-
 
 
 

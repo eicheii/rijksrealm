@@ -15,15 +15,14 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(167, 186, 216);
-  padding: 20px;
+  padding: 10px;
   width: 100%;
 }
 
 /* nav */
 .header-nav {
   display: flex;
-  gap: 20px;
-  margin-top: 10px;
+  gap: 10px;
 }
 
 .header-link {
@@ -92,6 +91,9 @@
 }
 
 /* gallery */
+.gallery-container {
+  padding: 1em;
+}
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -115,7 +117,15 @@
   border-radius: 4px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* modal */
+.no-scroll {
+  overflow: hidden;
+}
+
 .modal-fullwidth { 
   position: fixed;
   top: 0;
@@ -131,20 +141,15 @@
   left: 25%;
   top: 15%;
   width: 50%;
-  height: auto;
+  max-height: 70%;
   overflow: auto;
   background-color: #c1cde0;
   border-radius: 5px;
   box-shadow: 2px 4px 10px #6f6f74;
 }
 
-.btn-close {
-  float: right;
-  margin: 1.5em;
-}
-
 .modal-body,
-.modal-buttons {
+.remove-button-row {
   display: flex;
   justify-content: space-between;
   padding: 1.5em;
@@ -162,12 +167,35 @@
   margin-left: 1em;
 }
 
-.modal-art-title {
-  border-bottom: 1px solid #000;
+.border-bottom {
+  border-bottom: 1px solid #7f8b9e;
 }
 
-.no-scroll {
-  overflow: hidden;
+/* knappar i modal */
+.close-button-row {
+  width: 100%;
+  margin: 1em 1em 0 -1em;
+}
+
+.close-button {
+  float: right;
+}
+
+.remove-button-row {
+  padding-top: 0;
+}
+.remove-button-row > button {
+  background-color: #b65151;
+  transition: 0.3s;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+.remove-button-row > button:hover {
+  background-color: #a34747;
+  transition: 0.3s;
 }
 
 /* mobile: 600px */
@@ -177,5 +205,31 @@
     left: 5%;
     top: 20%;
     width: 90%;
+  }
+
+  .modal-body,
+  .remove-button {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .modal-body > img {
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  .modal-text {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .close-button-row {
+    width: 100%;
+    margin: 1em 1em 2.5em -1em;
+  }
+
+  .remove-button-row > button {
+    width: 8em;
+    margin: 0 auto;
   }
 }

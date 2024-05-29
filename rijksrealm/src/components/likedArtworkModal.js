@@ -4,7 +4,9 @@ const LikedArtworkModal = ({ artwork, onClose, removeLikedArtwork }) => {
     return (
         <div className="modal-fullwidth">
             <div className="modal-container">
-                <button type="button" className="btn-close" aria-label="Close" onClick={onClose}>X</button>
+                <div className="close-button-row">
+                    <button type="button" className="close-button cursor-pointer" aria-label="Close" onClick={onClose}>X</button>
+                </div>
                 <div className="modal-body">
                     {artwork.webImage && artwork.webImage.url ? (
                         <img src={artwork.webImage.url} alt={artwork.title} />
@@ -12,13 +14,16 @@ const LikedArtworkModal = ({ artwork, onClose, removeLikedArtwork }) => {
                         <div>No image available</div>
                     )}
                     <div className="modal-text">
-                        <h3 className="modal-art-title">{artwork.title}</h3>
-                        <p>Test</p>
+                        <h3 className="border-bottom">{artwork.title}</h3>
+                        <p className="border-bottom" style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
+                        <p>{artwork.description}</p>
+                        
                     </div>
+                  
+                    
                 </div>
-                <div className="modal-buttons">
-                    <button type="button" className="btn btn-primary" onClick={removeLikedArtwork}>Remove</button>
-                    <button type="button" className="btn btn-primary">Comment</button> {/* !! behöver en funktion !!*/}
+                <div className="remove-button-row">
+                    <button type="button" className="cursor-pointer" onClick={removeLikedArtwork}>Remove</button>
                 </div>
             </div>
         </div>
@@ -26,3 +31,4 @@ const LikedArtworkModal = ({ artwork, onClose, removeLikedArtwork }) => {
 };
 
 export default LikedArtworkModal;
+
