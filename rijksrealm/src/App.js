@@ -36,7 +36,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/header';
 import SearchForm from './components/searchForm';
-import Artwork from './components/artwork';
 import LikedArtworks from './components/likedArtwork';
 
 function App() {

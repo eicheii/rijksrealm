@@ -55,3 +55,70 @@
   height: auto;
   border-radius: 4px;
 }
+
+/* modal */
+/* täcker hela skärmen så användaren inte kan trycka utanför */
+.modal-fullwidth { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #5b5b6642;
+}
+
+.modal-container {
+  position: fixed;
+  left: 25%;
+  top: 15%;
+  width: 50%;
+  height: auto;
+  overflow: auto;
+  background-color: #c1cde0;
+  border-radius: 5px;
+  box-shadow: 2px 4px 10px #6f6f74;
+}
+
+.btn-close {
+  float: right;
+  margin: 1.5em;
+}
+
+.modal-body,
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+  text-align: left;
+}
+
+.modal-body>img {
+  width: 45%;
+  border-radius: 5px;
+  box-shadow: 1px 2px 5px #6f6f74;
+}
+
+.modal-text{
+  width: 50%;
+  margin-left: 1em;
+}
+
+.modal-art-title {
+  border-bottom: 1px solid #000;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* mobil: 600px */
+/* !! behöver fixas !! */
+@media only screen and (max-width: 600px) {
+  .modal-container {
+    position: fixed;
+    left: 5%;
+    top: 20%;
+    width: 90%;
+  }
+}

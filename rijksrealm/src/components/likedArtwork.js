@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import LikedArtworkModal from './likedArtworkModal';
 
 const LikedArtworks = () => {
     // hämtar sparade konstverk från localStorage
@@ -11,11 +12,30 @@ const LikedArtworks = () => {
         localStorage.setItem('likedArtworks', JSON.stringify(artworks));
     };
 
+    // konstverket som användaren har tryckt på
+    const [selectedArtwork, setSelectedArtwork] = useState(null);
+
     const handleRemove = (artwork) => {
-        const updatedLikedArtworksArray = likedArtworks.filter(item => item.id !== artwork.id);
-        
-        setLikedArtworks(updatedLikedArtworksArray);
-        updateLocalStorage(updatedLikedArtworksArray);
+        // användaren måste bekräfta innan konstverket tas bort
+        var confirmRemoveArt = window.confirm("Do you want to remove this artwork from your list?");
+        if (confirmRemoveArt) {
+            const updatedLikedArtworksArray = likedArtworks.filter(item => item.id !== artwork.id);
+            setLikedArtworks(updatedLikedArtworksArray);
+            updateLocalStorage(updatedLikedArtworksArray);
+            setSelectedArtwork(null);
+        } else {
+            // gör ingenting
+        }
+    };
+
+    const handleImageClick = (artwork) => {
+        setSelectedArtwork(artwork);
+        document.body.classList.add("no-scroll");
+    };
+
+    const handleCloseModal = () => {
+        setSelectedArtwork(null);
+        document.body.classList.remove("no-scroll");
     };
 
     return (
@@ -26,16 +46,27 @@ const LikedArtworks = () => {
                 {likedArtworks.map((artwork) => (
                     <li key={artwork.id} className="gallery-item">
                         {artwork.webImage && artwork.webImage.url ? (
-                        <img src={artwork.webImage.url} alt={artwork.title} className="gallery-image" />
+                            <img 
+                                src={artwork.webImage.url} 
+                                alt={artwork.title} 
+                                className="gallery-image" 
+                                onClick={() => handleImageClick(artwork)} 
+                            />
                         ) : (
                             <div>No image available</div>
                         )}
-                        <p>{artwork.title}</p>
-                        <button onClick={() => handleRemove(artwork)}>Remove</button>
                     </li>
                 ))}
             </ul>
-        </div>
+            </div>
+
+            {selectedArtwork && (
+                <LikedArtworkModal 
+                    artwork={selectedArtwork} 
+                    onClose={handleCloseModal} 
+                    removeLikedArtwork={() => handleRemove(selectedArtwork)} 
+                />
+            )}
         </div>
     );
 };
