@@ -8,11 +8,13 @@ const LikedArtworkModal = ({ artwork, onClose, removeLikedArtwork }) => {
                     <button type="button" className="close-button cursor-pointer" aria-label="Close" onClick={onClose}>X</button>
                 </div>
                 <div className="modal-body">
-                    {artwork.webImage && artwork.webImage.url ? (
+                    <div className="modal-img-section">
+                        {artwork.webImage && artwork.webImage.url ? (
                         <img src={artwork.webImage.url} alt={artwork.title} />
-                    ) : (
+                        ) : (
                         <div>No image available</div>
-                    )}
+                        )}
+                    </div>
                     <div className="modal-text">
                         <h2 className="border-bottom" style={{ textTransform: 'uppercase' }}>{artwork.title}</h2>
                         <p className="border-bottom" style={{ fontStyle: 'italic' }}>{artwork.principalOrFirstMaker}</p>
@@ -22,8 +24,6 @@ const LikedArtworkModal = ({ artwork, onClose, removeLikedArtwork }) => {
                         <p><strong>Technique:</strong> {artwork.technique || 'Details unknown'}</p>
                         <p><strong>Period:</strong> {artwork.period || 'Details unknown'}</p>
                     </div>
-                  
-                    
                 </div>
                 <div className="remove-button-row">
                     <button type="button" className="cursor-pointer" onClick={removeLikedArtwork}>Remove</button>
