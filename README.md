@@ -6,9 +6,9 @@
 1. Navigate to the project directory:
 
 2. Obtain Rijksmuseum's API key:
-    * visit Rijksmuseum's webside: [https://www.rijksmuseum.nl/en/rijksstudio](https://www.rijksmuseum.nl/en/rijksstudio)
-    * create an account and verify your email
-    * get your API key in your Rijksstudio account
+    * Visit Rijksmuseum's webside: [https://www.rijksmuseum.nl/en/rijksstudio](https://www.rijksmuseum.nl/en/rijksstudio)
+    * Create an account and verify your email
+    * Get your API key in your Rijksstudio account
 
 3. Add the API key to the project:
     * Navigate to `components/api.js`
