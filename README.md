@@ -6,7 +6,7 @@
 1. Navigate to the project directory:
 
 2. Obtain Rijksmuseum's API key:
-    * Visit Rijksmuseum's webside: [https://www.rijksmuseum.nl/en/rijksstudio](https://www.rijksmuseum.nl/en/rijksstudio)
+    * Visit Rijksmuseum's website: [https://www.rijksmuseum.nl/en/rijksstudio](https://www.rijksmuseum.nl/en/rijksstudio)
     * Create an account and verify your email
     * Get your API key in your Rijksstudio account
 
