@@ -5,11 +5,30 @@
 
 1. Navigate to the project directory:
 
-2. Start the app: 
-     cd rijksrealm
-     npm start
+2. Obtain Rijksmuseum's API key:
+    * visit Rijksmuseum's webside: [https://www.rijksmuseum.nl/en/rijksstudio](https://www.rijksmuseum.nl/en/rijksstudio)
+    * create an account and verify your email
+    * get your API key in your Rijksstudio account
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+3. Add the API key to the project:
+    * Navigate to `components/api.js`
+    * Add the API key at the top of the file where it says:
+```javascript
+const API_KEY = 'your API-key here';
+```
+
+4. Install the package needed for the application:
+```bash
+npm install
+```
+
+5. Start the app:
+```bash
+cd rijksrealm
+npm start
+```
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Beskrivning av projekt
 En webbapplikation som låter användare söka efter konstverk från Rijksmuseum
